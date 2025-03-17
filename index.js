@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const [num1Input, operationInput, num2Input, resultInput, feedbackInput] =
     inputs;
   const generateButton = document.getElementById("generateButton");
-  const okButton = document.getElementById("okButton");
+  const okButton = document.getElementById("checkButton");
   const resetButton = document.getElementById("resetButton");
   const numberButtons = document.querySelectorAll(".numberButton");
 
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
       answer = num1 - num2;
     }
     if (userAnswer === answer) {
-      feedbackInput.value = "Верно";
+      feedbackInput.value = "Correct!";
     } else {
-      feedbackInput.value = "Неверно";
+      feedbackInput.value = "Not Correct!";
     }
   }
 

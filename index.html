@@ -6,15 +6,32 @@
     <title>Lab</title>
     <script src="index.js"></script>
   </head>
+  <style>
+    table {
+      table-layout: fixed;
+      width: 150px;
+    }
+    button {
+      width: 100%;
+    }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  </style>
   <body>
-    <input style="width: 50px" readonly />
-    <input style="width: 10px" readonly />
-    <input style="width: 50px" readonly />
-    =
-    <input style="width: 50px" readonly />
-    <button id="generateButton">?</button>
-    <input style="width: 100px" readonly />
     <table>
+      <tr>
+        <td colspan="4">
+          <div style="display: flex; justify-content: center; gap: 5px;">
+          <input  readonly />
+          <input  readonly />
+          <input  readonly />
+          =
+          <input readonly />
+        </td>
+      </tr>
       <tr>
         <td><button class="numberButton">1</button></td>
         <td><button class="numberButton">3</button></td>
@@ -29,10 +46,18 @@
       </tr>
       <tr>
         <td colspan="2">
-          <button style="width: 100%" id="okButton">Ok</button>
+          <button style="width: 100%" id="checkButton">Сheck</button>
         </td>
         <td colspan="2">
-          <button style="width: 100%" id="resetButton">reset</button>
+          <button style="width: 100%" id="resetButton">Reset</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4"><button id="generateButton">Generate</button></td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <input readonly />
         </td>
       </tr>
     </table>
