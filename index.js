@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      let num = parseInt(button.textContent);
+      let num = parseInt(button.textContent, 16);
       if (num < numSys) {
         resultInput.value += button.textContent;
       }
