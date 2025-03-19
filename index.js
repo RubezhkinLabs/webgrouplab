@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let num1, num2, answer, operation, numSys, maxNum;
 
   function updateNumberButtons() {
-    numSys = parseInt(numberSystem.value);
     numberButtons.forEach((button) => {
       const num = parseInt(button.textContent, 16);
       if (num < numSys) {
@@ -26,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function generateProblem() {
     numSys = parseInt(numberSystem.value);
     maxNum = parseInt(maximumNumber.value);
+    updateNumberButtons();
     console.log(numSys);
     num1 = Math.floor(Math.random() * maxNum);
     num2 = Math.floor(Math.random() * maxNum);
@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  numberSystem.addEventListener("change", updateNumberButtons);
   generateButton.addEventListener("click", generateProblem);
   okButton.addEventListener("click", checkAnswer);
   resetButton.addEventListener("click", reset);
