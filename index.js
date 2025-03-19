@@ -11,6 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let num1, num2, answer, operation, numSys, maxNum;
 
+  function updateNumberButtons() {
+    numSys = parseInt(numberSystem.value);
+    numberButtons.forEach((button) => {
+      const num = parseInt(button.textContent, 16);
+      if (num < numSys) {
+        button.style.display = "block"; // Показываем кнопку
+      } else {
+        button.style.display = "none"; // Скрываем кнопку
+      }
+    });
+  }
+
   function generateProblem() {
     numSys = parseInt(numberSystem.value);
     maxNum = parseInt(maximumNumber.value);
@@ -56,9 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  numberSystem.addEventListener("change", updateNumberButtons);
   generateButton.addEventListener("click", generateProblem);
   okButton.addEventListener("click", checkAnswer);
   resetButton.addEventListener("click", reset);
 
+  updateNumberButtons(); // Обновляем кнопки при загрузке
   reset();
 });
