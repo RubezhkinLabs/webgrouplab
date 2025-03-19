@@ -7,14 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButton = document.getElementById("resetButton");
   const numberButtons = document.querySelectorAll(".numberButton");
   const numberSystem = document.getElementById("numberSystem");
+  const maximumNumber = document.getElementById("maximumNumber");
 
-  let num1, num2, answer, operation, numSys;
+  let num1, num2, answer, operation, numSys, maxNum;
 
   function generateProblem() {
     numSys = parseInt(numberSystem.value);
+    maxNum = parseInt(maximumNumber.value);
     console.log(numSys);
-    num1 = Math.floor(Math.random() * 256);
-    num2 = Math.floor(Math.random() * 256);
+    num1 = Math.floor(Math.random() * maxNum);
+    num2 = Math.floor(Math.random() * maxNum);
     operation = Math.random() < 0.5 ? "+" : "-";
     if (operation === "-" && num1 < num2) {
       [num1, num2] = [num2, num1];
