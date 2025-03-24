@@ -57,10 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Сохраняем результат в localStorage
     const result = {
+      numSys: numSys,
       num1: num1.toString(numSys),
       operation: operation,
       num2: num2.toString(numSys),
       userAnswer: resultInput.value,
+      correctAnswer: answer.toString(numSys),
       feedback: feedbackInput.value,
     };
 
@@ -88,10 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const row = document.createElement("tr");
       row.innerHTML = `
         <td>${index + 1}</td>
+        <td>${entry.numSys}</td>
         <td>${entry.num1}</td>
         <td>${entry.operation}</td>
         <td>${entry.num2}</td>
         <td>${entry.userAnswer}</td>
+        <td>${entry.correctAnswer}</td>
         <td>${entry.feedback}</td>
       `;
       historyTable.appendChild(row);

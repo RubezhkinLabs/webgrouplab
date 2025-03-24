@@ -1,126 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab</title>
+    <script src="index.js"></script>
+  </head>
+  <style>
+    table {
+      table-layout: flex;
+      width: 350px;
+      border-collapse: collapse;
+    }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lab</title>
-  <script src="index.js"></script>
-</head>
-<style>
-  table {
-    table-layout: fixed;
-    width: 350px;
-    border-collapse: collapse;
-  }
+    button {
+      width: 100%;
+    }
 
-  button {
-    width: 100%;
-  }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    select {
+      width: 100%;
+      text-align: center;
+    }
+  </style>
 
-  input {
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  select {
-    width: 100%;
-    text-align: center;
-  }
-</style>
-
-<body>
-  <div id="mainContainer" style="display: flex; gap: 20px; align-items: flex-start;">
-    <div id="calculatorContainer">
-      <table>
-        <tr>
-          <td colspan="2">
-            <select id="numberSystem">
-              <option value="2">2 number system</option>
-              <option value="4">4 number system</option>
-              <option value="8" selected="selected">8 number system</option>
-              <option value="16">16 number system</option>
-            </select>
-          </td>
-          <td colspan="2">
-            <select id="maximumNumber">
-              <option value="16">max num 16</option>
-              <option value="64" selected="selected">max num 64</option>
-              <option value="256">max num 256</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="4">
-            <div style="display: flex; gap: 5px;">
-              <input readonly />
-              <input readonly />
-              <input readonly />
-              =
-              <input readonly />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><button class="numberButton">0</button></td>
-          <td><button class="numberButton">1</button></td>
-          <td><button class="numberButton">2</button></td>
-          <td><button class="numberButton">3</button></td>
-        </tr>
-        <tr>
-          <td><button class="numberButton">4</button></td>
-          <td><button class="numberButton">5</button></td>
-          <td><button class="numberButton">6</button></td>
-          <td><button class="numberButton">7</button></td>
-        </tr>
-        <tr>
-          <td><button class="numberButton">8</button></td>
-          <td><button class="numberButton">9</button></td>
-          <td><button class="numberButton">a</button></td>
-          <td><button class="numberButton">b</button></td>
-        </tr>
-        <tr>
-          <td><button class="numberButton">c</button></td>
-          <td><button class="numberButton">d</button></td>
-          <td><button class="numberButton">e</button></td>
-          <td><button class="numberButton">f</button></td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <button style="width: 100%" id="checkButton">Сheck</button>
-          </td>
-          <td colspan="2">
-            <button style="width: 100%" id="resetButton">Reset</button>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="4"><button id="generateButton">Generate</button></td>
-        </tr>
-        <tr>
-          <td colspan="4">
-            <input readonly />
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div id="historyContainer">
-      <table border="1">
-        <thead>
+  <body>
+    <div
+      id="mainContainer"
+      style="display: flex; gap: 20px; align-items: flex-start"
+    >
+      <div id="calculatorContainer">
+        <table>
           <tr>
-            <th style="width: 5%;">#</th>
-            <th style="width: 15%;">Num1</th>
-            <th style="width: 20%;">Operation</th>
-            <th style="width: 15%;">Num2</th>
-            <th style="width: 15%;">User Answer</th>
-            <th style="width: 20%;">Feedback</th>
+            <td colspan="2">
+              <select id="numberSystem">
+                <option value="2">2 number system</option>
+                <option value="4">4 number system</option>
+                <option value="8" selected="selected">8 number system</option>
+                <option value="16">16 number system</option>
+              </select>
+            </td>
+            <td colspan="2">
+              <select id="maximumNumber">
+                <option value="16">max num 16</option>
+                <option value="64" selected="selected">max num 64</option>
+                <option value="256">max num 256</option>
+              </select>
+            </td>
           </tr>
-        </thead>
-        <tbody id="historyTable">
-          <!-- История будет добавляться сюда -->
-        </tbody>
-      </table>
+          <tr>
+            <td colspan="4">
+              <div style="display: flex; gap: 5px">
+                <input readonly />
+                <input readonly />
+                <input readonly />
+                =
+                <input readonly />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><button class="numberButton">0</button></td>
+            <td><button class="numberButton">1</button></td>
+            <td><button class="numberButton">2</button></td>
+            <td><button class="numberButton">3</button></td>
+          </tr>
+          <tr>
+            <td><button class="numberButton">4</button></td>
+            <td><button class="numberButton">5</button></td>
+            <td><button class="numberButton">6</button></td>
+            <td><button class="numberButton">7</button></td>
+          </tr>
+          <tr>
+            <td><button class="numberButton">8</button></td>
+            <td><button class="numberButton">9</button></td>
+            <td><button class="numberButton">a</button></td>
+            <td><button class="numberButton">b</button></td>
+          </tr>
+          <tr>
+            <td><button class="numberButton">c</button></td>
+            <td><button class="numberButton">d</button></td>
+            <td><button class="numberButton">e</button></td>
+            <td><button class="numberButton">f</button></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button style="width: 100%" id="checkButton">Сheck</button>
+            </td>
+            <td colspan="2">
+              <button style="width: 100%" id="resetButton">Reset</button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4"><button id="generateButton">Generate</button></td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <input readonly />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="historyContainer">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Num Sys</th>
+              <th>Num1</th>
+              <th>Operation</th>
+              <th>Num2</th>
+              <th>User Answer</th>
+              <th>Corrct Answer</th>
+              <th>Feedback</th>
+            </tr>
+          </thead>
+          <tbody id="historyTable">
+            <!-- История будет добавляться сюда -->
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
