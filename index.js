@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const numberSystem = document.getElementById("numberSystem");
   const maximumNumber = document.getElementById("maximumNumber");
   const historyTable = document.getElementById("historyTable"); // Таблица для истории
+  const clearHistory = document.getElementById("clearHistory");
 
   let num1, num2, answer, operation, numSys, maxNum;
   let history = []; // Массив для хранения истории
@@ -28,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     numSys = parseInt(numberSystem.value);
     maxNum = parseInt(maximumNumber.value);
     updateNumberButtons();
-    console.log(numSys);
     num1 = Math.floor(Math.random() * maxNum);
     num2 = Math.floor(Math.random() * maxNum);
     operation = Math.random() < 0.5 ? "+" : "-";
@@ -102,6 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function clear() {
+    localStorage.clear();
+    history = [];
+    updateHistoryTable();
+  }
+
   numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
       resultInput.value += button.textContent;
@@ -112,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   generateButton.addEventListener("click", generateProblem);
   okButton.addEventListener("click", checkAnswer);
   resetButton.addEventListener("click", reset);
+  clearHistory.addEventListener("click", clear);
 
   updateNumberButtons(); // Обновляем кнопки при загрузке
   loadHistory(); // Загружаем историю из localStorage
