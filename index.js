@@ -114,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  numberSystem.addEventListener("change", updateNumberButtons);
   generateButton.addEventListener("click", generateProblem);
   okButton.addEventListener("click", checkAnswer);
   resetButton.addEventListener("click", reset);
